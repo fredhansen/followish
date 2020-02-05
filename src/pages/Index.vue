@@ -34,6 +34,9 @@
         </div>
       </div>
     </div>
+   
+    <feed></feed>
+    <feed></feed>
     <basic-elements></basic-elements>
     <navigation></navigation>
     <tabs-section></tabs-section>
@@ -64,8 +67,10 @@
   </div>
 </template>
 <script>
+
 import { Parallax } from '@/components';
 import BasicElements from './components/BasicElementsSection';
+import Feed from './components/Feed';
 import Navigation from './components/Navigation';
 import TabsSection from './components/Tabs';
 import ProgressPagination from './components/ProgressPagination';
@@ -82,6 +87,7 @@ export default {
   name: 'index',
   bodyClass: 'index-page',
   components: {
+    Feed,
     Parallax,
     BasicElements,
     Navigation,
