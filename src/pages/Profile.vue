@@ -31,7 +31,7 @@
     <div class="section">
       <div class="container">
         <div class="button-container">
-          <a href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
+          <a href="#button" class="btn btn-primary btn-round btn-lg">Contact</a>
           <a
             href="#button"
             class="btn btn-default btn-round btn-lg btn-icon"

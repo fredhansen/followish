@@ -228,26 +228,7 @@
             </button>
           </div>
           <template slot="navbar-menu">
-            <li class="nav-item">
-              <a class="nav-link" href="#pablo">
-                <i class="fab fa-facebook-square"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#pablo">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#pablo">
-                <i class="fab fa-google-plus"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#pablo">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
+            
           </template>
         </navbar>
         <!-- End Navbar Warning -->
@@ -269,26 +250,7 @@
               <span class="navbar-toggler-bar bar3"></span>
             </button>
           </div>
-          <template slot="navbar-menu">
-            <li class="nav-item">
-              <a class="nav-link" href="#pablo">
-                <i class="fab fa-facebook-square"></i>
-                <p>Share</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#pablo">
-                <i class="fab fa-twitter"></i>
-                <p>Tweet</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#pablo">
-                <i class="fab fa-pinterest"></i>
-                <p>Pin</p>
-              </a>
-            </li>
-          </template>
+          
         </navbar>
         <!-- End Navbar Danger -->
         <!-- Navbar Transparent -->
