@@ -1,95 +1,81 @@
 <template>
-  <div class="card card-plain">
-    <div role="tab" id="headingOne" class="card-header">
-      <a
-        data-toggle="collapse"
-        data-parent="#accordion"
-        :href="`#${itemId}`"
-        @click.prevent="activate"
-        :aria-expanded="active"
-        :aria-controls="`content-${itemId}`"
-      >
-        <slot name="title">
-          {{ title }}
-        </slot>
-        
-      </a>
-    </div>
-    <collapse-transition :duration="animationDuration">
-      <div
-        v-show="active"
-        :id="`content-${itemId}`"
-        role="tabpanel"
-        :aria-labelledby="title"
-        class="collapsed"
-      >
-        <div class="card-body">
-          <slot></slot>
-        </div>
-      </div>
-    </collapse-transition>
+  <div
+    id="accordion"
+    role="tablist"
+    aria-multiselectable="true"
+    class="card-collapse"
+  >
+    <slot></slot>
   </div>
 </template>
-<script>
-import { CollapseTransition } from 'vue2-transitions';
 
+<script>
 export default {
-  name: 'collapse-item',
-  components: {
-    CollapseTransition
-  },
+  name: 'collapse',
   props: {
-    title: {
-      type: String,
-      default: ''
-    },
-    id: String,
-    noIcon: Boolean
-  },
-  inject: {
     animationDuration: {
+      type: Number,
       default: 250
     },
     multipleActive: {
-      default: false
+      type: Boolean,
+      default: true
     },
-    addItem: {
-      default: () => {}
-    },
-    removeItem: {
-      default: () => {}
-    },
-    deactivateAll: {
-      default: () => {}
+    activeIndex: {
+      type: Number,
+      default: -1
     }
   },
-  computed: {
-    itemId() {
-      return this.id || this.title;
-    }
+  provide() {
+    return {
+      animationDuration: this.animationDuration,
+      multipleActive: this.multipleActive,
+      addItem: this.addItem,
+      removeItem: this.removeItem,
+      deactivateAll: this.deactivateAll
+    };
   },
   data() {
     return {
-      active: false
+      items: []
     };
   },
   methods: {
-    activate() {
-      if (!this.multipleActive) {
-        this.deactivateAll();
+    addItem(item) {
+      const index = this.$slots.default.indexOf(item.$vnode);
+      if (index !== -1) {
+        this.items.splice(index, 0, item);
       }
-      this.active = !this.active;
+    },
+    removeItem(item) {
+      const items = this.items;
+      const index = items.indexOf(item);
+      if (index > -1) {
+        items.splice(index, 1);
+      }
+    },
+    deactivateAll() {
+      this.items.forEach(item => {
+        item.active = false;
+      });
+    },
+    activateItem() {
+      if (this.activeIndex !== -1) {
+        this.items[this.activeIndex].active = true;
+      }
     }
   },
   mounted() {
-    this.addItem(this);
+    this.$nextTick(() => {
+      this.activateItem();
+    });
   },
-  destroyed() {
-    if (this.$el && this.$el.parentNode) {
-      this.$el.parentNode.removeChild(this.$el);
+  watch: {
+    activeIndex() {
+      this.activateItem();
     }
-    this.removeItem(this);
   }
 };
 </script>
-<style></style>
+
+<style scoped></style>

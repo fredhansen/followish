@@ -65,12 +65,12 @@
         }
 
         &.btn-info{
-            color: $info-color;
+            color: $primary-color;
 
             &:hover,
             &:focus,
             &:active{
-                color: $info-states-color;
+                color: $white-color;
             }
         }
 

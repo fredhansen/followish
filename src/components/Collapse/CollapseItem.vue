@@ -1,6 +1,6 @@
 <template>
-  <div class="card card-plain">
-    <div role="tab" id="headingOne" class="card-header">
+  <div class="btn btn-round btn-info btn-lg">
+    <div role="tab" id="headingOne">
       <a
         data-toggle="collapse"
         data-parent="#accordion"
@@ -9,9 +9,12 @@
         :aria-expanded="active"
         :aria-controls="`content-${itemId}`"
       >
-        <slot name="title">
-          {{ title }}
+        <slot name="image">
+          <div>
+            <img class="rounded-circle" src="img/ryan.jpg" height="42" width="42" />
+          </div>
         </slot>
+        <span name="title" class="text-black title h4">{{ title }}</span>
         <slot name="icon">
           <i v-if="!noIcon" class="now-ui-icons arrows-1_minimal-down"></i>
         </slot>
@@ -25,7 +28,7 @@
         :aria-labelledby="title"
         class="collapsed"
       >
-        <div class="card-body">
+        <div class="card-body text-black">
           <slot></slot>
         </div>
       </div>
@@ -33,17 +36,17 @@
   </div>
 </template>
 <script>
-import { CollapseTransition } from 'vue2-transitions';
+import { CollapseTransition } from "vue2-transitions";
 
 export default {
-  name: 'collapse-item',
+  name: "collapse-item",
   components: {
     CollapseTransition
   },
   props: {
     title: {
       type: String,
-      default: ''
+      default: ""
     },
     id: String,
     noIcon: Boolean
@@ -55,12 +58,7 @@ export default {
     multipleActive: {
       default: false
     },
-    addItem: {
-      default: () => {}
-    },
-    removeItem: {
-      default: () => {}
-    },
+
     deactivateAll: {
       default: () => {}
     }
