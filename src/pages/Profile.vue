@@ -24,40 +24,36 @@
     <div class="section">
       <div class="container">
         <div class="button-container">
-          <a href="#button" class="btn btn-primary btn-round btn-lg">Contact</a>
+          <a href="#button" class="btn btn-primary btn-round btn-lg">Chat</a>
           <a
             href="#button"
             class="btn btn-default btn-round btn-lg btn-icon"
             rel="tooltip"
-            title="Follow me on Twitter"
+            title="Facebook"
           >
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a
-            href="#button"
-            class="btn btn-default btn-round btn-lg btn-icon"
-            rel="tooltip"
-            title="Follow me on Instagram"
-          >
-            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook"></i>
           </a>
         </div>
-        <h3 class="title">I wish for...</h3>
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto">
+            <h3 class="title">I wish for...</h3>
+            <collapse>
+              <collapse-item title="Default Collapsible Item 1" name="1">
+                <div>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+              </collapse-item>
+              <collapse-item title="Default Collapsible Item 1" name="2">
+                <div>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+              </collapse-item>
+              <collapse-item title="Default Collapsible Item 1" name="3">
+                <div>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+              </collapse-item>
+            </collapse>
+          </div>
+        </div>
 
         <div class="row">
           <div class="col-md-6 ml-auto mr-auto">
             <h4 class="title text-center">Wishes that have come true</h4>
-          </div>
-          <div>
-            <v-expansion-panels accordion>
-              <v-expansion-panel v-for="project in myProjects" :key="project.title">
-                <v-expansion-panel-header>aaa</v-expansion-panel-header>
-                <v-expansion-panel-content class="grey--text">
-                  <div class="font-weight-bold">due by {{project.due}}</div>
-                  <div>text</div>
-                </v-expansion-panel-content>
-              </v-expansion-panel>
-            </v-expansion-panels>
           </div>
           <tabs
             pills
@@ -124,13 +120,17 @@
 </template>
 <script>
 import { Tabs, TabPane } from "@/components";
+import Collapse from "../components/Collapse/Collapse";
+import CollapseItem from "../components/Collapse/CollapseItem";
 
 export default {
   name: "profile",
   bodyClass: "profile-page",
   components: {
     Tabs,
-    TabPane
+    TabPane,
+    Collapse,
+    CollapseItem
   }
 };
 </script>

@@ -7,6 +7,7 @@
           <img class="n-logo" src="img/now-logo.png" alt />
           <h1 class="h1"></h1>
           <h3>followish;</h3>
+          <n-button type="primary" round>Round</n-button>
         </div>
       </div>
     </div>
@@ -58,11 +59,13 @@ import NucleoIconsSection from "./components/NucleoIconsSection";
 import SignupForm from "./components/SignupForm";
 import ExamplesSection from "./components/ExamplesSection";
 import DownloadSection from "./components/DownloadSection";
+import Button from "../components/Button";
 
 export default {
   name: "index",
   bodyClass: "index-page",
   components: {
+    [Button.name]: Button,
     Feed,
     Parallax,
     BasicElements,

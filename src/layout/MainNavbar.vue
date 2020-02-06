@@ -6,7 +6,7 @@
     :color-on-scroll="colorOnScroll"
     menu-classes="ml-auto"
   >
-    <template slot-scope="{ toggle, isToggled }">
+    <template slot-scope="{ }"> <!-- toggle, isToggled -->
       <router-link v-popover:popover1 class="navbar-brand" to="/">
         Adventures
       </router-link>
@@ -28,7 +28,7 @@
         </nav-link>
       </li>
       <li class="nav-item">
-        <nav-link class="nav-link" to="/feed">
+        <nav-link class="nav-link" to="/">
           <i class="now-ui-icons education_paper"></i> Potential adventures
         </nav-link>
       </li>
