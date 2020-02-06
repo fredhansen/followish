@@ -2,6 +2,12 @@
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
+// followish; stuff
+$wish-light-yellow:          #FFF300 !default;
+$wish-orange:                #FFB600 !default;
+$wish-dark-orange:           #FF7900 !default;
+
+
 $sans-serif-family:          'Montserrat', 'Helvetica Neue',  Arial, sans-serif !default;
 
 $none:                       0   !default;
@@ -46,7 +52,7 @@ $default-color:              #888888 !default;
 $default-states-color:       lighten($default-color, 6%) !default;
 $default-color-opacity:      rgba(182, 182, 182, .6) !default;
 
-$primary-color:              #f96332 !default;
+$primary-color:              $wish-orange !default;
 $primary-states-color:       lighten($primary-color, 6%) !default;
 $primary-color-opacity:      rgba(249, 99, 50, .3) !default;
 $primary-color-alert:        rgba(249, 99, 50, .8) !default;

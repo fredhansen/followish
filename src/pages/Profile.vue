@@ -1,29 +1,22 @@
 <template>
   <div>
-    <div class="page-header clear-filter" filter-color="orange">
-      <parallax
-        class="page-header-image"
-        style="background-image:url('img/bg5.jpg')"
-      >
-      </parallax>
+    <div class="page-header clear-filter" filter-color="wish-orange">
+      <parallax class="page-header-image" style="background-image:url('img/bg5.jpg')"></parallax>
       <div class="container">
         <div class="photo-container">
-          <img src="img/ryan.jpg" alt="" />
+          <img src="img/ryan.jpg" alt />
         </div>
         <h3 class="title">Ryan Scheinder</h3>
         <p class="category">Photographer</p>
+        <p class="category">Tartu</p>
         <div class="content">
           <div class="social-description">
-            <h2>26</h2>
-            <p>Comments</p>
-          </div>
-          <div class="social-description">
-            <h2>26</h2>
-            <p>Comments</p>
+            <h2>6</h2>
+            <p>Wishes</p>
           </div>
           <div class="social-description">
             <h2>48</h2>
-            <p>Bookmarks</p>
+            <p>Mutual friends</p>
           </div>
         </div>
       </div>
@@ -49,16 +42,22 @@
             <i class="fab fa-instagram"></i>
           </a>
         </div>
-        <h3 class="title">About me</h3>
-        <h5 class="description">
-          An artist of considerable range, Ryan — the name taken by
-          Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and
-          records all of his own music, giving it a warm, intimate feel with a
-          solid groove structure. An artist of considerable range.
-        </h5>
+        <h3 class="title">I wish for...</h3>
+
         <div class="row">
           <div class="col-md-6 ml-auto mr-auto">
-            <h4 class="title text-center">My Portfolio</h4>
+            <h4 class="title text-center">Wishes that have come true</h4>
+          </div>
+          <div>
+            <v-expansion-panels accordion>
+              <v-expansion-panel v-for="project in myProjects" :key="project.title">
+                <v-expansion-panel-header>aaa</v-expansion-panel-header>
+                <v-expansion-panel-content class="grey--text">
+                  <div class="font-weight-bold">due by {{project.due}}</div>
+                  <div>text</div>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+            </v-expansion-panels>
           </div>
           <tabs
             pills
@@ -74,11 +73,11 @@
                 <div class="row collections">
                   <div class="col-md-6">
                     <img src="img/bg6.jpg" class="img-raised" />
-                    <img src="img/bg11.jpg" alt="" class="img-raised" />
+                    <img src="img/bg11.jpg" alt class="img-raised" />
                   </div>
                   <div class="col-md-6">
-                    <img src="img/bg7.jpg" alt="" class="img-raised" />
-                    <img src="img/bg8.jpg" alt="" class="img-raised" />
+                    <img src="img/bg7.jpg" alt class="img-raised" />
+                    <img src="img/bg8.jpg" alt class="img-raised" />
                   </div>
                 </div>
               </div>
@@ -90,12 +89,12 @@
               <div class="col-md-10 ml-auto mr-auto">
                 <div class="row collections">
                   <div class="col-md-6">
-                    <img src="img/bg1.jpg" alt="" class="img-raised" />
-                    <img src="img/bg3.jpg" alt="" class="img-raised" />
+                    <img src="img/bg1.jpg" alt class="img-raised" />
+                    <img src="img/bg3.jpg" alt class="img-raised" />
                   </div>
                   <div class="col-md-6">
-                    <img src="img/bg8.jpg" alt="" class="img-raised" />
-                    <img src="img/bg7.jpg" alt="" class="img-raised" />
+                    <img src="img/bg8.jpg" alt class="img-raised" />
+                    <img src="img/bg7.jpg" alt class="img-raised" />
                   </div>
                 </div>
               </div>
@@ -107,11 +106,11 @@
               <div class="col-md-10 ml-auto mr-auto">
                 <div class="row collections">
                   <div class="col-md-6">
-                    <img src="img/bg3.jpg" alt="" class="img-raised" />
-                    <img src="img/bg8.jpg" alt="" class="img-raised" />
+                    <img src="img/bg3.jpg" alt class="img-raised" />
+                    <img src="img/bg8.jpg" alt class="img-raised" />
                   </div>
                   <div class="col-md-6">
-                    <img src="img/bg7.jpg" alt="" class="img-raised" />
+                    <img src="img/bg7.jpg" alt class="img-raised" />
                     <img src="img/bg6.jpg" class="img-raised" />
                   </div>
                 </div>
@@ -124,11 +123,11 @@
   </div>
 </template>
 <script>
-import { Tabs, TabPane } from '@/components';
+import { Tabs, TabPane } from "@/components";
 
 export default {
-  name: 'profile',
-  bodyClass: 'profile-page',
+  name: "profile",
+  bodyClass: "profile-page",
   components: {
     Tabs,
     TabPane
