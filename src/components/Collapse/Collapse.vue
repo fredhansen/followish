@@ -1,81 +1,95 @@
 <template>
-  <div
-    id="accordion"
-    role="tablist"
-    aria-multiselectable="true"
-    class="card-collapse"
-  >
-    <slot></slot>
+  <div class="card card-plain">
+    <div role="tab" id="headingOne" class="card-header">
+      <a
+        data-toggle="collapse"
+        data-parent="#accordion"
+        :href="`#${itemId}`"
+        @click.prevent="activate"
+        :aria-expanded="active"
+        :aria-controls="`content-${itemId}`"
+      >
+        <slot name="title">
+          {{ title }}
+        </slot>
+        
+      </a>
+    </div>
+    <collapse-transition :duration="animationDuration">
+      <div
+        v-show="active"
+        :id="`content-${itemId}`"
+        role="tabpanel"
+        :aria-labelledby="title"
+        class="collapsed"
+      >
+        <div class="card-body">
+          <slot></slot>
+        </div>
+      </div>
+    </collapse-transition>
   </div>
 </template>
-
 <script>
+import { CollapseTransition } from 'vue2-transitions';
+
 export default {
-  name: 'collapse',
+  name: 'collapse-item',
+  components: {
+    CollapseTransition
+  },
   props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    id: String,
+    noIcon: Boolean
+  },
+  inject: {
     animationDuration: {
-      type: Number,
       default: 250
     },
     multipleActive: {
-      type: Boolean,
-      default: true
+      default: false
     },
-    activeIndex: {
-      type: Number,
-      default: -1
+    addItem: {
+      default: () => {}
+    },
+    removeItem: {
+      default: () => {}
+    },
+    deactivateAll: {
+      default: () => {}
     }
   },
-  provide() {
-    return {
-      animationDuration: this.animationDuration,
-      multipleActive: this.multipleActive,
-      addItem: this.addItem,
-      removeItem: this.removeItem,
-      deactivateAll: this.deactivateAll
-    };
+  computed: {
+    itemId() {
+      return this.id || this.title;
+    }
   },
   data() {
     return {
-      items: []
+      active: false
     };
   },
   methods: {
-    addItem(item) {
-      const index = this.$slots.default.indexOf(item.$vnode);
-      if (index !== -1) {
-        this.items.splice(index, 0, item);
+    activate() {
+      if (!this.multipleActive) {
+        this.deactivateAll();
       }
-    },
-    removeItem(item) {
-      const items = this.items;
-      const index = items.indexOf(item);
-      if (index > -1) {
-        items.splice(index, 1);
-      }
-    },
-    deactivateAll() {
-      this.items.forEach(item => {
-        item.active = false;
-      });
-    },
-    activateItem() {
-      if (this.activeIndex !== -1) {
-        this.items[this.activeIndex].active = true;
-      }
+      this.active = !this.active;
     }
   },
   mounted() {
-    this.$nextTick(() => {
-      this.activateItem();
-    });
+    this.addItem(this);
   },
-  watch: {
-    activeIndex() {
-      this.activateItem();
+  destroyed() {
+    if (this.$el && this.$el.parentNode) {
+      this.$el.parentNode.removeChild(this.$el);
     }
+    this.removeItem(this);
   }
 };
 </script>
-
-<style scoped></style>
+<style></style>
