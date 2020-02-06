@@ -1,5 +1,5 @@
 <template>
-  <div class="page-header clear-filter" filter-color="orange">
+  <div class="page-header clear-filter" filter-color="wish-orange">
     <div
       class="page-header-image"
       style="background-image: url('img/login.jpg')"
@@ -26,13 +26,21 @@
             >
             </fg-input>
 
+             <a
+            href="#button"
+            class="btn btn-default btn-round btn-lg btn-icon"
+            rel="tooltip"
+            title="Facebook"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+
             <template slot="raw-content">
               <div class="card-footer text-center">
                 <a
-                  href="#pablo"
+                  href="#/profile"
                   class="btn btn-primary btn-round btn-lg btn-block"
-                  >Get Started</a
-                >
+                  >Get Started</a>
               </div>
               <div class="pull-left">
                 <h6>

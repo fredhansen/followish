@@ -32,15 +32,6 @@
           <i class="now-ui-icons education_paper"></i> Potential adventures
         </nav-link>
       </li>
-
-      <drop-down
-              tag="li"
-              title="(Examples)"
-              icon="now-ui-icons design_image"
-              class="nav-item"
-      >
-
-      </drop-down>
       
     </template>
   </navbar>

@@ -7,7 +7,9 @@
           <img class="n-logo" src="img/now-logo.png" alt />
           <h1 class="h1"></h1>
           <h3>followish;</h3>
-          <n-button type="primary" round>Round</n-button>
+        <div class="button-container">
+          <a href="#/login" class="btn btn-danger btn-round btn-lg">Login</a>
+        </div>
         </div>
       </div>
     </div>
