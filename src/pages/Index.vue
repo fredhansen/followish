@@ -46,7 +46,7 @@
 <script>
 import { Parallax } from "@/components";
 import BasicElements from "./components/BasicElementsSection";
-import Feed from "./components/Feed";
+import  Feed  from "../components/Collapse/Feed";
 import Navigation from "./components/Navigation";
 import TabsSection from "./components/Tabs";
 import ProgressPagination from "./components/ProgressPagination";
