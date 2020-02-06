@@ -28,7 +28,7 @@
         </nav-link>
       </li>
       <li class="nav-item">
-        <nav-link class="nav-item" to="/feed">
+        <nav-link class="nav-link" to="/feed">
           <i class="now-ui-icons education_paper"></i> Potential adventures
         </nav-link>
       </li>
