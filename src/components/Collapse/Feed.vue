@@ -15,7 +15,7 @@
     </div>
 
     <tabs type="primary">
-      <tab-pane label="Wintwe sports">
+      <tab-pane label=" sports">
         <collapse>
           <div v-for="item in items" v-bind:key="item.title">
             <collapse-item class="container" v-bind:title="item.title" v-bind:name="item.name">
@@ -226,4 +226,5 @@ li {
 a {
   color: #42b983;
 }
+
 </style>
