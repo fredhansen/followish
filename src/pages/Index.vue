@@ -7,15 +7,17 @@
           <img class="n-logo" src="img/now-logo.png" alt />
           <h1 class="h1"></h1>
           <h3>followish;</h3>
-        <div class="button-container">
-          <a href="#/login" class="btn btn-danger btn-round btn-lg">Get started</a>
-        </div>
+          <div class="button-container">
+            <a href="#/login" class="btn btn-danger btn-round btn-lg">Get started</a>
+            <br />
+            <a v-on:click="scrollToFeed" class="now-ui-icons arrows-1_minimal-down"></a>
+          </div>
         </div>
       </div>
     </div>
     <div class="main"></div>
 
-    <feed></feed>
+    <feed id="feed"></feed>
     <!-- 
 <feed></feed>
     <basic-elements></basic-elements>
@@ -40,7 +42,7 @@
 <script>
 import { Parallax } from "@/components";
 import BasicElements from "./components/BasicElementsSection";
-import  Feed  from "../components/Collapse/Feed";
+import Feed from "../components/Collapse/Feed";
 import Navigation from "./components/Navigation";
 import TabsSection from "./components/Tabs";
 import ProgressPagination from "./components/ProgressPagination";
@@ -73,6 +75,13 @@ export default {
     SignupForm,
     ExamplesSection,
     DownloadSection
+  },
+  methods: {
+    scrollToFeed() {
+      var container = this.$el.querySelector("#feed");
+      container.scrollTop = container.scrollHeight;
+      console.log("aaaa");
+    }
   }
 };
 </script>

@@ -37,11 +37,12 @@
         <div class="row">
           <div class="col-md-6 ml-auto mr-auto">
             <h3 class="title">I've always wanted to...</h3>
+            <h5 class="description">List the things you want to do with someone</h5>
+
             <collapse>
-              <collapse-item title="learn snowboarding" name="1" >
+              <collapse-item title="learn snowboarding" name="1">
                 <div>I want to try out snowboarding before I'm 30. None of my friends are open to learning and I don't really want to get an instructor.</div>
               </collapse-item>
-
             </collapse>
           </div>
         </div>
@@ -49,6 +50,7 @@
         <div class="row">
           <div class="col-md-6 ml-auto mr-auto">
             <h4 class="title text-center">Wishes that have come true</h4>
+            <h5 class="description">Post pictures of the things you have already done</h5>
           </div>
           <tabs
             pills

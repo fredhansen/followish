@@ -1,13 +1,13 @@
 <template>
   <navbar
     position="fixed"
-    type="primary"
+    type="white"
     :transparent="transparent"
     :color-on-scroll="colorOnScroll"
     menu-classes="ml-auto"
   >
     <template slot-scope="{ }"> <!-- toggle, isToggled -->
-      <router-link v-popover:popover1 class="navbar-brand" to="/">
+      <router-link class="navbar-brand" to="/">
         Adventures
       </router-link>
       <el-popover
