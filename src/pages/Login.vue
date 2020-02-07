@@ -27,7 +27,7 @@
             </fg-input>
 
              <a
-            href="#button"
+            href="#/profile"
             class="btn btn-default btn-round btn-lg btn-icon"
             rel="tooltip"
             title="Facebook"

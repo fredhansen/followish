@@ -5,7 +5,7 @@
       <fg-input placeholder="Search" v-model="inputVal"></fg-input>
     </div>
     <p>{{ inputVal }}</p>
-    <div class="container button-container row justify-content-md-center">
+    <div class="container button-container row">
       <n-button type="primary" class="btn btn-primary btn-round btn-sm">everything</n-button>
       <n-button type="info" class="btn btn-neutral btn-round btn-sm">winter sports</n-button>
       <n-button type="info" class="btn btn-neutral btn-round btn-sm">food</n-button>
@@ -20,16 +20,8 @@
     </div>
 
     <collapse>
-      <collapse-item title="go snowboarding" name="1">
-        <div>m-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
-        <div class="button-container">
-          <a href="#/profile" class="btn btn-primary btn-round btn-lg">view profile</a>
-          <a href="#/profile" class="btn btn-primary btn-round btn-lg">message</a>
-        </div>
-      </collapse-item>
-      <br />
       <div v-for="item in items" v-bind:key="item.title">
-        <collapse-item v-bind:title="item.title">
+        <collapse-item class="container" v-bind:title="item.title" v-bind:name="item.name">
           <div>{{item.content}}</div>
 
           <div class="button-container">
@@ -77,13 +69,37 @@ export default {
       inputVal: "",
 
       items: {
+        user0: {
+          name: "Ryan Scheinder",
+          title: "go snowboarding",
+          content: "I want to try out snowboarding before I'm 30. None of my friends are open to learning and I don't really want to get an instructor."
+        },
         user1: {
-          name: "Jack",
+          name: "Jack Daniel",
           title: "ride a bull",
           content: "aa"
         },
-        user2: { name: "Tom", title: "go skydiving", content: "aa" },
-        user3: { name: "Anna", title: "try Georgian food", content: "aa" }
+        user2: { name: "Tom Brady", title: "go skydiving", content: "aa" },
+        user3: {
+          name: "Tasneem Haque",
+          title: "try Georgian food",
+          content: "aa"
+        },
+        user4: {
+          name: "Marina Sarapuu",
+          title: "try Georgian food",
+          content: "aa"
+        },
+        user5: {
+          name: "Samuel Sanchez",
+          title: "try Georgian food",
+          content: "aa"
+        },
+        user6: {
+          name: "Pavel Valge",
+          title: "try Georgian food",
+          content: "aa"
+        }
       }
     };
   }

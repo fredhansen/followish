@@ -9,15 +9,22 @@
         :aria-expanded="active"
         :aria-controls="`content-${itemId}`"
       >
-        <slot name="image">
-          <div>
-            <img class="rounded-circle" src="img/ryan.jpg" height="42" width="42" />
+        <div>
+          <slot name="image">
+            <div class="inline">
+              <img class="rounded-circle inline" src="img/ryan.jpg" height="50" width="50" />
+            </div>
+          </slot>
+          <div class="inline">
+            <ul>
+              <div name="name" class="text-black bold">{{ name }}</div>
+              <div name="title" class="text-black bold large">{{ title }}<i v-if="!noIcon" class="now-ui-icons arrows-1_minimal-down"></i></div>
+              <div name="icon">
+                
+              </div>
+            </ul>
           </div>
-        </slot>
-        <span name="title" class="text-black title h4">{{ title }}</span>
-        <slot name="icon">
-          <i v-if="!noIcon" class="now-ui-icons arrows-1_minimal-down"></i>
-        </slot>
+        </div>
       </a>
     </div>
     <collapse-transition :duration="animationDuration">
@@ -45,6 +52,10 @@ export default {
   },
   props: {
     title: {
+      type: String,
+      default: ""
+    },
+    name: {
       type: String,
       default: ""
     },

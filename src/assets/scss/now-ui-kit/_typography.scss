@@ -70,6 +70,9 @@ p{
     font-weight: 300;
     font-size: 1.2em;
 }
+.large{
+    font-size: $font-size-h4;
+}
 
 .title{
     font-weight: $font-weight-bold;
@@ -161,4 +164,9 @@ p{
             color: $opacity-8;
         }
     }
+}
+
+
+.inline{
+    display: inline-block;
 }
