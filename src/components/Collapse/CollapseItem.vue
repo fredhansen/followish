@@ -9,19 +9,19 @@
         :aria-expanded="active"
         :aria-controls="`content-${itemId}`"
       >
-        <div>
-          <slot name="image">
-            <div class="inline">
-              <img class="rounded-circle inline" src="img/ryan.jpg" height="50" width="50" />
-            </div>
-          </slot>
-          <div class="inline">
+        <div align="left">
+          <div name="image">
+            <img class="rounded-circle img-padding" src="img/ryan.jpg" height="70" width="70" align="left" />
+          </div>
+
+          <div >
             <ul>
               <div name="name" class="text-black bold">{{ name }}</div>
-              <div name="title" class="text-black bold large">{{ title }}<i v-if="!noIcon" class="now-ui-icons arrows-1_minimal-down"></i></div>
-              <div name="icon">
-                
+              <div name="title" class="text-black bold large">
+                {{ title }}
+                <i v-if="!noIcon" class="now-ui-icons arrows-1_minimal-down"></i>
               </div>
+              <div name="icon"></div>
             </ul>
           </div>
         </div>

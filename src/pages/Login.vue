@@ -40,7 +40,7 @@
                 <a
                   href="#/profile"
                   class="btn btn-primary btn-round btn-lg btn-block"
-                  >Get Started</a>
+                  >Login</a>
               </div>
               <div class="pull-left">
                 <h6>

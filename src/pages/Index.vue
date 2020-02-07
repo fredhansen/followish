@@ -8,7 +8,7 @@
           <h1 class="h1"></h1>
           <h3>followish;</h3>
         <div class="button-container">
-          <a href="#/login" class="btn btn-danger btn-round btn-lg">Login</a>
+          <a href="#/login" class="btn btn-danger btn-round btn-lg">Get started</a>
         </div>
         </div>
       </div>
